@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "mpi.h"
 int main(int argc, char *argv[]) { /* mpi_funcoes.c  */
-int meu_ranque, num_procs; 
-int versao, subversao,  aux, ret;
-double tempo_inicial, tempo_final; 
-char maquina[MPI_MAX_PROCESSOR_NAME];
+    int meu_ranque, num_procs; 
+    int versao, subversao,  aux, ret;
+    double tempo_inicial, tempo_final; 
+    char maquina[MPI_MAX_PROCESSOR_NAME];
     /* Inicia o MPI. Em caso de erro aborta o programa */
     ret = MPI_Init(&argc, &argv);
     if (ret != MPI_SUCCESS) {

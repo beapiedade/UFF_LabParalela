@@ -3,10 +3,10 @@
 #include "mpi.h"
 
 int main(int argc, char *argv[]) { /* mpi_simples.c  */
-int meu_ranque, num_procs;
-int origem, destino, etiq = 0;
-char mensagem[200];
-MPI_Status estado;
+    int meu_ranque, num_procs;
+    int origem, destino, etiq = 0;
+    char mensagem[200];
+    MPI_Status estado;
     /* Chamada inicial para o MPI */
     MPI_Init(&argc, &argv);
     /* Determina ranque e número de processos em execução */

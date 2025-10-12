@@ -1,0 +1,14 @@
+INSTALAÇÃO
+- abra o prompt de comando como administrador
+- digite wsl --install (vai baixar o ubuntu)
+- abra o terminal ubuntu pelo menu incial
+- digite:
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential mpich
+sudo apt install libopenmpi-dev (esse aqui tive que instalar muito depois pq não tava achando o mpi.h)
+
+COMANDOS
+mpirun --version
+mpicc -o executavel programa_mpi.c
+mpirun -np 4 ./executavel

@@ -1,24 +1,34 @@
 #include <stdio.h>
+#include <time.h>
+
+#define TAM 1000
 
 int main () {
-    int x, soma=0, subtracao=0, mult=1, TAM = 1000;
+    clock_t tempo_final, tempo_inicial = clock();
+    double tempo_total;
+
+    int x, soma = 0, subtracao = 0;
+    long double multiplicacao = 1;
     int vet[TAM];
 
-    for (x = 0; x < 10; x++) {
+    for (x = 0; x < TAM; x++) {
         vet[x] = x + 1;
     }
 
-    for (x = 0; x < 10; x++) {
+    for (x = 0; x < TAM; x++) {
         printf("vet[%d] = %d\n", x, vet[x]);
     }
 
-    for (x = 0; x < 10; x++) {
+    for (x = 0; x < TAM; x++) {
         soma = soma + vet[x];
         subtracao = subtracao - vet[x];
-        mult = mult * vet[x];
+        multiplicacao = multiplicacao * vet[x];
     }
     
-    printf("Soma = %d\n", soma);
-    printf("Subtracao = %d\n", subtracao);
-    printf("Multiplicacao = %d\n", mult);
+    tempo_final = clock();
+    tempo_total = (((double)tempo_final - (double)tempo_inicial) / CLOCKS_PER_SEC);
+    printf("Soma = %d, ", soma);
+    printf("Subtracao = %d, ", subtracao);
+    printf("Multiplicacao = %Lf\n", multiplicacao);
+	printf("TEMPO TOTAL: %.6fs\n", tempo_total);
 }
