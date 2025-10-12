@@ -27,8 +27,8 @@ int main () {
     
     tempo_final = clock();
     tempo_total = (((double)tempo_final - (double)tempo_inicial) / CLOCKS_PER_SEC);
-    printf("Soma = %d, ", soma);
-    printf("Subtracao = %d, ", subtracao);
+    printf("Soma = %d\n", soma);
+    printf("Subtracao = %d\n", subtracao);
     printf("Multiplicacao = %Lf\n", multiplicacao);
 	printf("TEMPO TOTAL: %.6fs\n", tempo_total);
 }

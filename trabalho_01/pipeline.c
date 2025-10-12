@@ -43,8 +43,8 @@ int main(int argc, char** argv) {
 
     // Recebe os dados do estágio anterior
     } else {
-        MPI_Recv(vet, TAM, MPI_INT, rank-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        MPI_Recv(resultados, OPS, MPI_LONG_DOUBLE, rank-1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Recv(vet, TAM, MPI_INT, rank - 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        MPI_Recv(resultados, OPS, MPI_LONG_DOUBLE, rank - 1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     }
 
     // Processo 1: Cálculo da subtração
@@ -60,12 +60,12 @@ int main(int argc, char** argv) {
         }
         
     // Processo 3: Recebimento do vetor e resultados parciais
-    } else {
+    } else if (rank == 3) {
         tempo_final = MPI_Wtime();
         tempo_total = tempo_final - tempo_inicial;
-        printf("Soma = %.0Lf, ", resultados[0]);
-        printf("Subtracao = %.0Lf, ", resultados[1]);
-        printf("Multiplicacao = %Lf\n", resultados[2]);
+        printf("Soma = %.0Lf\n", resultados[0]);
+        printf("Subtracao = %.0Lf\n", resultados[1]);
+        printf("Multiplicacao = %.0Lf\n", resultados[2]);
         printf("TEMPO TOTAL: %.5fs\n", tempo_total);
     }
     

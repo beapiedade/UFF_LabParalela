@@ -43,8 +43,8 @@ int main(int argc, char** argv) {
         
         tempo_final = MPI_Wtime();
         tempo_total = tempo_final - tempo_inicial;
-        printf("Soma = %d, ", soma);
-        printf("Subtracao = %d, ", subtracao);
+        printf("Soma = %d\n", soma);
+        printf("Subtracao = %d\n", subtracao);
         printf("Multiplicacao = %Lf\n", multiplicacao);
         printf("TEMPO TOTAL: %.6fs\n", tempo_total);
     
